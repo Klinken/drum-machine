@@ -21,10 +21,6 @@ export class DrumsContainer extends React.Component {
         } 
     }
 
-    handleClick (){
-
-    }
-
     render() {
         document.addEventListener("keydown", this.handleKeyPress);
         return (
