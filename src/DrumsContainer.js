@@ -19,6 +19,7 @@ export class DrumsContainer extends React.Component {
         this.setState({name: beats.beatOne});
         return alert(this.state.name);
         } else {
+        this.setState({name: "Hello"});
         return alert(this.state.name);
         }
     }
