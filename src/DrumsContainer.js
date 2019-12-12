@@ -16,7 +16,10 @@ export class DrumsContainer extends React.Component {
 
     handleKeyPress (event){
         if (event.keyCode === 65){
-        return alert(beats.beatOne);
+        this.setState({name: beats.beatOne});
+        return alert(this.state.name);
+        } else {
+        return alert(this.state.name);
         }
     }
 
