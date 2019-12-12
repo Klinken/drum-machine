@@ -7,6 +7,10 @@ export class DrumsContainer extends React.Component {
     constructor(props){
         super(props);
 
+        this.state = {
+            name: "Hello"
+        };
+
         this.handleKeyPress = this.handleKeyPress.bind(this);
     }
 
