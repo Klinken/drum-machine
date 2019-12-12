@@ -1,4 +1,4 @@
 
 export const beats = {
-    beatOne: 'A beat'
+    beatOne: "/sounds/onetwo.mp3" 
 };

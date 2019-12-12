@@ -1,7 +1,7 @@
 import React from 'react';
 import { Drums } from './Drums';
 import './drumscontainer.css';
-//import { beats } from './sounds/beats.db';
+import { beats } from './beats.db';
 
 export class DrumsContainer extends React.Component {
     constructor(props){
@@ -15,14 +15,14 @@ export class DrumsContainer extends React.Component {
     }
 
     handleKeyPress (event){
-        var audioElement = new Audio("/sounds/onetwo.mp3");
         if (event.keyCode === 65){
+        var audioElement = new Audio(beats.beatOne);
         audioElement.play();
         } 
     }
 
     handleClick (){
-        
+
     }
 
     render() {
