@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { DrumsContainer }from './containers/DrumsContainer';
+import './css/base.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<DrumsContainer />, document.getElementById('root'));

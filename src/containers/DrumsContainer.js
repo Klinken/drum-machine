@@ -7,6 +7,10 @@ export class DrumsContainer extends React.Component {
     constructor(props){
         super(props);
 
+        this.state = {
+            name: ""
+        };
+
         this.handleKeyPress = this.handleKeyPress.bind(this);
     }
 
@@ -17,15 +21,19 @@ export class DrumsContainer extends React.Component {
             switch (keyPressed) {
                 case 81:
                     audioElement = new Audio(sounds.bass);
+                    this.setState({name: "Bass"});
                     break;
                 case 87:
                     audioElement = new Audio(sounds.cymbal);
+                    this.setState({name: "Cymbal"});
                     break;
                 case 69:
                     audioElement = new Audio(sounds.floorTom);
+                    this.setState({name: "Floor Tom"});
                     break;
                 case 65:
                     audioElement = new Audio(sounds.hihat);
+                    this.setState({name: "The Hi Hat"});
                     break;
                 case 83:
                     audioElement = new Audio(sounds.mediumTom);
@@ -43,7 +51,7 @@ export class DrumsContainer extends React.Component {
                     audioElement = new Audio(sounds.tom);
                     break;
                 default:
-                    audioElement = null;
+                    this.setState({name: ""});
             }
 
             if(audioElement){
@@ -56,6 +64,15 @@ export class DrumsContainer extends React.Component {
         document.addEventListener("keydown", this.handleKeyPress);
         return (
             <div id="drum-machine">
+
+              <div className="title">
+                <h1>DRUM MACHINE</h1>
+                <h2>Keep on drumming</h2>
+              </div>
+              
+              <p id="display">{this.state.name}</p>
+              
+              <div className="drum-grid">
                 <Drums name="Q" sound={sounds.bass}/>
                 <Drums name="W" sound={sounds.cymbal}/>
                 <Drums name="E" sound={sounds.floorTom}/>
@@ -65,6 +82,8 @@ export class DrumsContainer extends React.Component {
                 <Drums name="Z" sound={sounds.snare}/>
                 <Drums name="X" sound={sounds.sticks}/>
                 <Drums name="C" sound={sounds.tom}/>
+              </div>
+
             </div>
         );
     }

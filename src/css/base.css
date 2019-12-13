@@ -1,0 +1,24 @@
+/**
+ * 
+ * BASE
+ * ---- 
+ * 
+ * This sets the base elements of the drummachine
+ * 
+ */
+
+html {
+    height: 100%;
+    font-family: 'Geo', sans-serif;
+    background: rgb(37, 37, 37);
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}

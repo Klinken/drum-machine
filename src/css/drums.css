@@ -9,4 +9,15 @@
 
 .drum-pad {
     padding: 20px;
+    border-radius: 4px;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(185, 185, 185);
+    background: #343637;
+}
+
+.drum-pad:active {
+    border: none;
+    box-shadow: 0px 0px 5px 1px red;
 }
