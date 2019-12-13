@@ -1,0 +1,16 @@
+
+/**
+ * DRUMSCONTAINER 
+ * --------
+ * 
+ * This file contains the layout of the drummachine.
+ * 
+ */
+
+ #drum-machine {
+     display: grid;
+     grid: 100px 100px 100px / 100px 100px 100px;
+     justify-content: center;
+     align-content: center;
+     height: 97vh;
+ }
