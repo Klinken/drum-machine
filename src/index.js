@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import { DrumsContainer }from './DrumsContainer';
+import './css/index.css';
+import { DrumsContainer }from './containers/DrumsContainer';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<DrumsContainer />, document.getElementById('root'));
