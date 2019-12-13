@@ -11,7 +11,7 @@
     grid-template-columns: 1fr auto 1fr;
     grid-template-areas:
         "title . ."
-        ". display ."
+        "display display display"
         ". drums ."
     ;
 }
@@ -32,6 +32,9 @@
 
 #display {
     grid-area: display;
+    height: 40px;
+    background-color: #FFF;
+    text-align: center;
 }
 
 .drum-grid {

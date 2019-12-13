@@ -37,18 +37,23 @@ export class DrumsContainer extends React.Component {
                     break;
                 case 83:
                     audioElement = new Audio(sounds.mediumTom);
+                    this.setState({name: "The Medium Tom"});
                     break;
                 case 68:
                     audioElement = new Audio(sounds.snareTwo);
+                    this.setState({name: "The Secondary Snare"});
                     break;
                 case 90:
                     audioElement = new Audio(sounds.snare);
+                    this.setState({name: "The Snare"});
                     break;
                 case 88:
                     audioElement = new Audio(sounds.sticks);
+                    this.setState({name: "Sticks & Stones"});
                     break;
                 case 67:
                     audioElement = new Audio(sounds.tom);
+                    this.setState({name: "Well you know Tom"});
                     break;
                 default:
                     this.setState({name: ""});
