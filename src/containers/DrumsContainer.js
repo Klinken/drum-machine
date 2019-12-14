@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drums } from '../presentation/Drums';
+import { Drums } from '../views/Drums';
 import '../css/drumscontainer.css';
 import { sounds } from '../data/sounds.db';
 
