@@ -12,7 +12,6 @@ export class DrumsContainer extends React.Component {
         };
 
         this.handleKeyPress = this.handleKeyPress.bind(this);
-        this.changeState = this.changeState.bind(this);
     }
 
         handleKeyPress (event){
@@ -21,40 +20,40 @@ export class DrumsContainer extends React.Component {
 
             switch (keyPressed) {
                 case 81:
-                    audioElement = new Audio(sounds.bass);
-                    this.setState({name: "Bass"});
+                    audioElement = new Audio(sounds.bass.filePath);
+                    this.setState({name: sounds.bass.text});
                     break;
                 case 87:
-                    audioElement = new Audio(sounds.cymbal);
-                    this.setState({name: "Cymbal"});
+                    audioElement = new Audio(sounds.cymbal.filePath);
+                    this.setState({name: sounds.cymbal.text});
                     break;
                 case 69:
-                    audioElement = new Audio(sounds.floorTom);
-                    this.setState({name: "Floor Tom"});
+                    audioElement = new Audio(sounds.floorTom.filePath);
+                    this.setState({name: sounds.floorTom.text});
                     break;
                 case 65:
-                    audioElement = new Audio(sounds.hihat);
-                    this.setState({name: "The Hi Hat"});
+                    audioElement = new Audio(sounds.hihat.filePath);
+                    this.setState({name: sounds.hihat.text});
                     break;
                 case 83:
-                    audioElement = new Audio(sounds.mediumTom);
-                    this.setState({name: "The Medium Tom"});
+                    audioElement = new Audio(sounds.mediumTom.filePath);
+                    this.setState({name: sounds.mediumTom.text});
                     break;
                 case 68:
-                    audioElement = new Audio(sounds.snareTwo);
-                    this.setState({name: "The Secondary Snare"});
+                    audioElement = new Audio(sounds.snare.filePath);
+                    this.setState({name: sounds.snare.text});
                     break;
                 case 90:
-                    audioElement = new Audio(sounds.snare);
-                    this.setState({name: "The Snare"});
+                    audioElement = new Audio(sounds.snareTwo.filePath);
+                    this.setState({name: sounds.snareTwo.text});
                     break;
                 case 88:
-                    audioElement = new Audio(sounds.sticks);
-                    this.setState({name: "Sticks & Stones"});
+                    audioElement = new Audio(sounds.sticks.filePath);
+                    this.setState({name: sounds.sticks.text});
                     break;
                 case 67:
-                    audioElement = new Audio(sounds.tom);
-                    this.setState({name: "Well you know Tom"});
+                    audioElement = new Audio(sounds.tom.filePath);
+                    this.setState({name: sounds.tom.text});
                     break;
                 default:
                     this.setState({name: ""});
@@ -65,14 +64,11 @@ export class DrumsContainer extends React.Component {
             }
             
         }
-
-        changeState (toState){
-            this.setState({name: toState});
-        }
-
+        
     render() {
         document.addEventListener("keydown", this.handleKeyPress);
         return (
+            
             <div id="drum-machine">
 
               <div className="title">
@@ -83,15 +79,51 @@ export class DrumsContainer extends React.Component {
               <p id="display">{this.state.name}</p>
               
               <div className="drum-grid">
-                <Drums name="Q" sound={sounds.bass} setStateName={()=> this.setState({name: "Bass"})} />
-                <Drums name="W" sound={sounds.cymbal} />
-                <Drums name="E" sound={sounds.floorTom} />
-                <Drums name="A" sound={sounds.hihat} />
-                <Drums name="S" sound={sounds.mediumTom} />
-                <Drums name="D" sound={sounds.snareTwo} />
-                <Drums name="Z" sound={sounds.snare} />
-                <Drums name="X" sound={sounds.sticks} />
-                <Drums name="C" sound={sounds.tom} />
+                <Drums 
+                name="Q" 
+                sound={sounds.bass.filePath} 
+                setTheState={() => {this.setState({name: sounds.bass.text})}} />
+
+                <Drums 
+                name="W" 
+                sound={sounds.cymbal.filePath} 
+                setTheState={() => {this.setState({name: sounds.cymbal.text})}} />
+
+                <Drums 
+                name="E" 
+                sound={sounds.floorTom.filePath} 
+                setTheState={() => {this.setState({name: sounds.floorTom.text})}} />
+
+                <Drums 
+                name="A" 
+                sound={sounds.hihat.filePath} 
+                setTheState={() => {this.setState({name: sounds.hihat.text})}} />
+
+                <Drums 
+                name="S" 
+                sound={sounds.mediumTom.filePath} 
+                setTheState={() => {this.setState({name: sounds.mediumTom.text})}} />
+
+                <Drums 
+                name="D" 
+                sound={sounds.snare.filePath} 
+                setTheState={() => {this.setState({name: sounds.snare.text})}} />
+
+                <Drums 
+                name="Z" 
+                sound={sounds.snareTwo.filePath} 
+                setTheState={() => {this.setState({name: sounds.snareTwo.text})}} />
+
+                <Drums 
+                name="X" 
+                sound={sounds.sticks.filePath} 
+                setTheState={() => {this.setState({name: sounds.sticks.text})}} />
+
+                <Drums 
+                name="C" 
+                sound={sounds.tom.filePath} 
+                setTheState={() => {this.setState({name: sounds.tom.text})}} />
+
               </div>
 
             </div>
