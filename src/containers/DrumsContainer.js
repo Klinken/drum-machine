@@ -12,6 +12,7 @@ export class DrumsContainer extends React.Component {
         };
 
         this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.changeState = this.changeState.bind(this);
     }
 
         handleKeyPress (event){
@@ -65,6 +66,10 @@ export class DrumsContainer extends React.Component {
             
         }
 
+        changeState (toState){
+            this.setState({name: toState});
+        }
+
     render() {
         document.addEventListener("keydown", this.handleKeyPress);
         return (
@@ -78,15 +83,15 @@ export class DrumsContainer extends React.Component {
               <p id="display">{this.state.name}</p>
               
               <div className="drum-grid">
-                <Drums name="Q" sound={sounds.bass}/>
-                <Drums name="W" sound={sounds.cymbal}/>
-                <Drums name="E" sound={sounds.floorTom}/>
-                <Drums name="A" sound={sounds.hihat}/>
-                <Drums name="S" sound={sounds.mediumTom}/>
-                <Drums name="D" sound={sounds.snareTwo}/>
-                <Drums name="Z" sound={sounds.snare}/>
-                <Drums name="X" sound={sounds.sticks}/>
-                <Drums name="C" sound={sounds.tom}/>
+                <Drums name="Q" sound={sounds.bass} setStateName={()=> this.setState({name: "Bass"})} />
+                <Drums name="W" sound={sounds.cymbal} />
+                <Drums name="E" sound={sounds.floorTom} />
+                <Drums name="A" sound={sounds.hihat} />
+                <Drums name="S" sound={sounds.mediumTom} />
+                <Drums name="D" sound={sounds.snareTwo} />
+                <Drums name="Z" sound={sounds.snare} />
+                <Drums name="X" sound={sounds.sticks} />
+                <Drums name="C" sound={sounds.tom} />
               </div>
 
             </div>

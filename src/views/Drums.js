@@ -11,7 +11,7 @@ export const Drums = (props) => {
     }
 
     return (
-        <button className="drum-pad" onClick={playsound}>
+        <button className="drum-pad" onClick={() => {playsound, props.setStateName}} >
             {props.name}
         </button>
     );
