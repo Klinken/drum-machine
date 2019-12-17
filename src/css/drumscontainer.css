@@ -10,7 +10,7 @@
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     grid-template-areas:
-        "title . ."
+        "title title title"
         "display display display"
         ". drums ."
     ;
@@ -40,6 +40,13 @@
 .drum-grid {
     grid-area: drums;
     display: grid;
+    grid: 100px 100px 100px / 100px 100px 100px;
+    gap: 10px;
+    }
+
+@media all and (min-width: 490px){
+.drum-grid {
     grid: 150px 150px 150px / 150px 150px 150px;
     gap: 10px;
+    }
 }

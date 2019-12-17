@@ -12,6 +12,8 @@ export class DrumsContainer extends React.Component {
         };
 
         this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.playSound = this.playSound.bind(this);
+        this.setName = this.setName.bind(this);
     }
 
         handleKeyPress (event){
@@ -64,6 +66,15 @@ export class DrumsContainer extends React.Component {
             }
             
         }
+
+        playSound(sound){
+            var soundElement = new Audio(sound);
+            soundElement.play();
+        }
+
+        setName(newState){
+            this.setState({name: newState});
+        }
         
     render() {
         document.addEventListener("keydown", this.handleKeyPress);
@@ -76,54 +87,74 @@ export class DrumsContainer extends React.Component {
                 <h2>Keep on drumming</h2>
               </div>
               
-              <p id="display">{this.state.name}</p>
+              <p id="display">
+                  {this.state.name}
+              </p>
               
               <div className="drum-grid">
                 <Drums 
                 name="Q" 
-                sound={sounds.bass.filePath} 
-                setTheState={() => {this.setState({name: sounds.bass.text})}} />
-
+                sound={() => {
+                    this.playSound(sounds.bass.filePath);
+                    this.setName(sounds.bass.text);
+                }} />
+                
                 <Drums 
                 name="W" 
-                sound={sounds.cymbal.filePath} 
-                setTheState={() => {this.setState({name: sounds.cymbal.text})}} />
-
+                sound={() => {
+                    this.playSound(sounds.cymbal.filePath);
+                    this.setName(sounds.cymbal.text);
+                }} />
+                
                 <Drums 
                 name="E" 
-                sound={sounds.floorTom.filePath} 
-                setTheState={() => {this.setState({name: sounds.floorTom.text})}} />
-
+                sound={() => {
+                    this.playSound(sounds.floorTom.filePath);
+                    this.setName(sounds.floorTom.text);
+                }} />
+                
                 <Drums 
                 name="A" 
-                sound={sounds.hihat.filePath} 
-                setTheState={() => {this.setState({name: sounds.hihat.text})}} />
-
+                sound={() => {
+                    this.playSound(sounds.hihat.filePath);
+                    this.setName(sounds.hihat.text);
+                }} />
+                
                 <Drums 
                 name="S" 
-                sound={sounds.mediumTom.filePath} 
-                setTheState={() => {this.setState({name: sounds.mediumTom.text})}} />
-
+                sound={() => {
+                    this.playSound(sounds.mediumTom.filePath);
+                    this.setName(sounds.mediumTom.text);
+                }} />
+                
                 <Drums 
                 name="D" 
-                sound={sounds.snare.filePath} 
-                setTheState={() => {this.setState({name: sounds.snare.text})}} />
-
+                sound={() => {
+                    this.playSound(sounds.snare.filePath);
+                    this.setName(sounds.snare.text);
+                }} />
+                
                 <Drums 
                 name="Z" 
-                sound={sounds.snareTwo.filePath} 
-                setTheState={() => {this.setState({name: sounds.snareTwo.text})}} />
-
+                sound={() => {
+                    this.playSound(sounds.snareTwo.filePath);
+                    this.setName(sounds.snareTwo.text);
+                }} />
+                
                 <Drums 
                 name="X" 
-                sound={sounds.sticks.filePath} 
-                setTheState={() => {this.setState({name: sounds.sticks.text})}} />
-
+                sound={() => {
+                    this.playSound(sounds.sticks.filePath);
+                    this.setName(sounds.sticks.text);
+                }} />
+                
                 <Drums 
                 name="C" 
-                sound={sounds.tom.filePath} 
-                setTheState={() => {this.setState({name: sounds.tom.text})}} />
-
+                sound={() => {
+                    this.playSound(sounds.tom.filePath);
+                    this.setName(sounds.tom.text);
+                }} />
+                
               </div>
 
             </div>

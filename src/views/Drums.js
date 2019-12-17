@@ -4,15 +4,8 @@ import '../css/drums.css';
 
 
 export const Drums = (props) => {
-
-    function playsound(){
-        var soundElement = new Audio(props.sound);
-        props.setTheState();
-        soundElement.play();
-    }
-    
     return (
-        <button className="drum-pad" onClick={playsound} >
+        <button className="drum-pad" onClick={props.sound} >
             {props.name}
         </button>
     );
